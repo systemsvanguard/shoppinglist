@@ -2,7 +2,7 @@
 
 A simple **Grocery Shopping List App** built using **Angular.js**, HTML5, CSS, JavaScript, & FontAwesome icons. 
 
-![Smartphone Wishlist](http://ryanhunter.org/portfolio/smartphones/smartphones.png)
+![Smartphone Wishlist](http://ryanhunter.org/portfolio/shoppinglist/images/shoppinglist.png)
 
 ---
 
