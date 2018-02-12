@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Shopping List</title><!-- version 2.07 -->
+    <meta name="description" content="A simple shopping list to-do list app made with Angular.js v 1.6.6.">
+    <meta name="author" content="Ryan Hunter">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+	<link href="https://fonts.googleapis.com/css?family=Acme|Mukta+Malar" rel="stylesheet">
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="libs/vanguard/styles.css">  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="shoppinglist/shoppinglist.css">
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/angularjs/1.6/angular.min.js"></script>
+</head>
+
+<div class="container" ng-app="angularTodo">
+ <div class="listframe">
+  <h1>Grocery List</h1>
+  <div class="todo-list" ng-controller="angularTodoC">
+    <div class="todo-list__head">
+      <form ng-submit="submitNewItem();">
+        <input type="text" placeholder="Add a new grocery item to the list, then hit Enter" class="todo-list-head__text-input" ng-model="newItem">
+        <div class="toto-list-head__submit" ng-click="submitNewItem();">
+		  <i class="fa fa-check" aria-hidden="true"></i>
+		</div>
+      <form>
+    </div>
+    <ul class="todo-list__items">
+      <li class="animated slideInUp" ng-repeat="item in items" ng-class="{'completed': item.status == 'completed'}">
+	    <span>{{$index + 1}}</span>{{item.title}}
+		  <i class="fa fa-trash-o todo-list-item__trash" aria-hidden="true" ng-click="deleteItem($index);"></i>
+		  <i class="fa todo-list-item__complete" ng-class="{'fa-times': item.status == 'completed', 'fa-check-circle-o': item.status != 'completed'}" aria-hidden="true" ng-click="completeItem($index);">
+		  </i>
+	  </li>
+    </ul>
+  </div>
+ </div><!--- listframe -->  
+</div>
+  
+  
+    <!-- JS files -->
+	<script src="libs/bootstrap/bootstrap.min.js"></script>
+	<script src="libs/widgets.js"></script>
+	<script src="shoppinglist/shoppinglist.js"></script>
+</body>
+</html>
